@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graduation Invite</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Graduate&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="slide-1" id="slide-1">
+    <div class="caption">
+        <h1 class="graduate-regular">Congratulations</h1>
+        <h2 class="graduate-regular">You're invited to party...</h2>
+        <a class="btn" id="openOverlay"><h3>Please open</h3></a>
+    </div>
+  </div>
+
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <div class="slide-2" id="slide-2">
+        <audio loop autoplay id="audio" src="sound/backsound.mp3"></audio>
+
+        <div class="header">
+            <h1 for="c1" class="graduate-regular">graduation</h1>
+            <h2 for="c2" class="graduate-regular">class of 2024</h2>
+            <h1 for="c3" class="graduate-regular">Bachelor of Information System</h1>
+        </div>
+        <div class="wrapper">
+            <div class="container">
+                <input type="radio" name="slide" id="c1" checked>
+                <label for="c1" class="card">
+                    <div class="row">
+                        <div class="icon">1</div>
+                        <div class="description">
+                            <h4>M. Hadef Petriza, S.Kom</h4>
+                            <p>1911521007</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c2">
+                <label for="c2" class="card">
+                    <div class="row">
+                        <div class="icon">2</div>
+                        <div class="description">
+                            <h4>M. Rafvy Octa Nugraha, S.Kom</h4>
+                            <p>1911523007</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c3">
+                <label for="c3" class="card">
+                    <div class="row">
+                        <div class="icon">3</div>
+                        <div class="description">
+                            <h4>Bukyt Anugrah, S.Kom</h4>
+                            <p>1911522006</p>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="slide" id="c4">
+                <label for="c4" class="card">
+                    <div class="row">
+                        <div class="icon">4</div>
+                        <div class="description">
+                            <h4>Ahmad Fadli Ramadhan, S.Kom</h4>
+                            <p>1911521006</p>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <a class="down-arrow" href="#info"></a>
+        </div>
+        <div class="info" id="info">
+            <div class="col-3">
+                <h2>Thank You</h2>
+                <div class="message">
+                    <p>Thank you to everyone who will willing to attend in our graduation on :</p><br>
+                    <p class="text-center">Saturday, 09 Maret 2024<br>
+                        Seminat Gedung F, Universitas Andalas<br>
+                        01:30 PM</p><br>
+                    <p>I apologize if during college we made a mistake or said something unkind to you all and may we all be given smoothness and ease in all matters and that what we dream of can soon come true</p>
+                </div>
+            </div>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1490.8546742538167!2d100.46024436566474!3d-0.9142448866016086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4b7cde3108dfd%3A0xeea2872cf6254c08!2sRuang%20Seminar%20Gedung%20F!5e0!3m2!1sid!2sid!4v1709789963897!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  document.getElementById("openOverlay").addEventListener("click", function() {
+    document.getElementById("overlay").classList.add("active");
+    // Play audio
+    document.getElementById("audio").play();
+  });
+
+  document.querySelector("#info").forEach(anchor => {
+    anchor.addEventListener("click" ,function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior : "smooth"
+        });
+    });
+});
+</script>
+
+</body>
+</html>
